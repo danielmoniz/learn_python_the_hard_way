@@ -8,3 +8,7 @@ ex11
 1. Missed commas at the end of the print lines.
 2. Typo (weight instead of weigh)
 3. Missed the .format part of string output in Extra Credit.
+
+ex13
+1. Undefined var: typed 'seconds' instead of 'second'
+
