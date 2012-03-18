@@ -12,3 +12,6 @@ ex11
 ex13
 1. Undefined var: typed 'seconds' instead of 'second'
 
+ex14
+1. Missed the .format part of a string output in Extra Credit
+
