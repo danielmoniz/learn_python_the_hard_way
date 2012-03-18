@@ -4,4 +4,7 @@ ex8
 ex10
 1. Missed a space (attention to detail).
 
-
+ex11
+1. Missed commas at the end of the print lines.
+2. Typo (weight instead of weigh)
+3. Missed the .format part of string output in Extra Credit.
