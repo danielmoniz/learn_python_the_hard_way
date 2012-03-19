@@ -21,3 +21,9 @@ ex15
 ex16
 1. Spelling mistake
 
+ex24
+1. Syntax error - forgot a bracket
+2. When using a function call inside .format(), and the function call is to return a tuple, need to put a * before the function call.
+Eg. "blah blah {}, {}, and {}".format(*get_input())
+3. Mistyped a string.
+4. Missed a capital letter.
