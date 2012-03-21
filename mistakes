@@ -27,3 +27,6 @@ ex24
 Eg. "blah blah {}, {}, and {}".format(*get_input())
 3. Mistyped a string.
 4. Missed a capital letter.
+
+ex35
+1. Syntax error - missed an end bracket
