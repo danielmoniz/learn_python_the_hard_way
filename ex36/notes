@@ -1,0 +1,10 @@
+- a scenario needs to hold a number of pieces of data
+    - description of environment
+    - allowable actions a player can take
+    - ?? the outcome of those actions ??
+        - or, there is a standard set of actions, and each location allows for
+          some subset of those actions
+    - an event to overcome (or not). Eg. a troll can be killed, but a
+      blacksmith can be used for his trade any number of times.
+        - the effect of overcoming the event
+        - the newly allowable actions
