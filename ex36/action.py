@@ -5,6 +5,9 @@ class Action():
         self.action = action
         self.move_vector = self.determine_move_vector()
 
+    def __str__(self):
+        return "action object: test output"
+
     def get_move_vector(self):
         return self.move_vector
         

@@ -2,6 +2,7 @@ class GameState():
     """Defines a game_state object which stores information about the current
     state of the game."""
 
+    # @TODO Remove description and opponent parameters
     def __init__(self, scenario, location = (0, 0), description = "", opponent = None):
         """Sets the game_state object using the current location of the player,
         the description of that location, and text describing the most recent
