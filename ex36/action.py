@@ -6,6 +6,7 @@ class Action():
         self.move_vector = self.determine_move_vector()
 
     def __str__(self):
+        return "action object: " + self.action + ", " + str(self.move_vector)
         return "action object: test output"
 
     def get_move_vector(self):
@@ -21,7 +22,7 @@ class Action():
             return (1, 0)
         elif self.action == "S":
             return (0, -1)
-        elif self.action == "E":
+        elif self.action == "W":
             return (-1, 0)
         else:
             return (0, 0)

@@ -21,7 +21,11 @@ class GameState():
 
     def __str__(self): 
         """The string output when simply outputting the entire GameState object."""
-        return self.get_description()
+        output_string = "description: " + self.description
+        output_string += "\n" + "opponent: " + str(self.opponent)
+        output_string += "\n" + "actions: "+ str(self.actions)
+        return output_string
+        #return self.get_description()
 
     def get_description(self):
         """Return the description of the game_state object."""

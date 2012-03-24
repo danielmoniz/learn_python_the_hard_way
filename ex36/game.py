@@ -1,6 +1,9 @@
 from game_scenarios import GameScenarios
 from game_state import GameState
 from action import Action
+
+from string import upper
+
 class Game():
     """The main game class. Controls game actions such as starting or ending a 
     game."""
@@ -50,7 +53,11 @@ class Game():
         while not successful_input:
             scenario = game_state.scenario
             actions = scenario.actions
+            print game_state
             user_input = raw_input(game_state.get_description())
+# convert actions and user_input to all caps for normalization
+            actions = [upper(i) for i in actions]
+            user_input = upper(user_input)
             if self.is_input_acceptable(user_input, actions):
                 # is this line necessary?
                 successful_input = True 
@@ -70,6 +77,7 @@ class Game():
 
     def is_input_acceptable(self, user_input, actions):
         """Determine whether or not user input is acceptable, ie. it belongs to one of the allowed actions."""
+        print "uppercase:", actions, user_input, actions[0]
         is_standard_action = user_input in actions
 # @TODO Should not be using [0]! Need a more elegant approach.
         is_move_action = user_input in actions[0] and len(user_input) == 1

@@ -37,7 +37,10 @@ class GameScenarios():
 
     def get_game_scenario(self, location):
         x, y = location
-        game_scenario = self.game_scenarios[str(x) + "x" + str(y)]
+        try:
+            game_scenario = self.game_scenarios[str(x) + "x" + str(y)]
+        except KeyError:
+            game_scenario = self.game_scenarios["default"]
         return Scenario(**game_scenario)
 
     def get_default_scenario(self):
