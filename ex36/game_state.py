@@ -10,9 +10,9 @@ class GameState():
         self.scenario = scenario
         self.location = location 
         try:
-            self.description = scenario["description"]
-            self.opponent = scenario["opponent"]
-            self.actions = scenario["actions"]
+            self.description = scenario.description
+            self.opponent = scenario.opponent
+            self.actions = scenario.actions
         except KeyError:
             self.description = "Nothing seems unusual about this place."
             self.opponent = None

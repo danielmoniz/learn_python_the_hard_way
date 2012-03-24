@@ -1,3 +1,4 @@
+from scenario import Scenario
 class GameScenarios():
 
     def __init__(self):
@@ -36,7 +37,8 @@ class GameScenarios():
 
     def get_game_scenario(self, location):
         x, y = location
-        return self.game_scenarios[str(x) + "x" + str(y)]
+        game_scenario = self.game_scenarios[str(x) + "x" + str(y)]
+        return Scenario(**game_scenario)
 
     def get_default_scenario(self):
         return self.game_scenarios["default"]
