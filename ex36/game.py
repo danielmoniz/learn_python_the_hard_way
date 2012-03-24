@@ -65,7 +65,6 @@ class Game():
     def player_act(self, action):
         pass
         print action
-        if 
 
     def is_input_acceptable(self, user_input, actions):
         """Determine whether or not user input is acceptable, ie. it belongs to one of the allowed actions."""
