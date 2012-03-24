@@ -2,22 +2,26 @@ class GameState():
     """Defines a game_state object which stores information about the current
     state of the game."""
 
-    def __init__(self, game_scenarios, location = (0, 0), description = "", event = None):
+    def __init__(self, scenario, location = (0, 0), description = "", opponent = None):
         """Sets the game_state object using the current location of the player,
         the description of that location, and text describing the most recent
         event in that location."""
 
+        self.scenario = scenario
         self.location = location 
-        self.event = event 
-        self.description = self.get_location_description()
+        try:
+            self.description = scenario["description"]
+            self.opponent = scenario["opponent"]
+            self.actions = scenario["actions"]
+        except KeyError:
+            self.description = "Nothing seems unusual about this place."
+            self.opponent = None
+            self.actions = ["NESW"]
 
     def __str__(self): 
+        """The string output when simply outputting the entire GameState object."""
         return self.get_description()
 
     def get_description(self):
         """Return the description of the game_state object."""
         return self.description
-
-    def get_location_description(self):
-        """Get the description for the current location stored in this game_state object."""
-        return game_scenarios.get_game_scenario(self.location)

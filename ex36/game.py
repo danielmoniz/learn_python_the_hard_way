@@ -10,7 +10,9 @@ class Game():
     def __init__(self):
         """Initialize the game."""
         self.game_scenarios = GameScenarios()
-        self.game_state = GameState.GameState(self.game_scenarios, (0, 0), "test descr", "no event")
+        location = (0, 0)
+        scenario = self.game_scenarios.get_game_scenario(location)
+        self.game_state = GameState.GameState(scenario, (0, 0), "test descr")
         self.game_over = False
 
     def start_game(self):
@@ -43,10 +45,33 @@ class Game():
 
     def get_player_input(self, game_state):
         """Return input from the player. Loop until valid input is found."""
-        while True:
+        successful_input = False
+        while not successful_input:
             """print game_state.location
             print game_state.event
             print game_state.description"""
-            user_input = raw_input(game_state)
-            self.win_game()
+            scenario = game_state.scenario
+            actions = scenario["actions"]
+            print scenario
+            user_input = raw_input(game_state.get_description())
+            if self.is_input_acceptable(user_input, actions):
+                pass
+                # is this necessary?
+                successful_input = True 
+                self.player_act(user_input)
+
             return user_input
+
+    def player_act(self, action):
+        pass
+        print action
+        if 
+
+    def is_input_acceptable(self, user_input, actions):
+        """Determine whether or not user input is acceptable, ie. it belongs to one of the allowed actions."""
+        is_standard_action = user_input in actions
+        is_move_action = user_input in actions[0] and len(user_input) == 1
+        if is_standard_action or is_move_action:
+            return True
+        else:
+            return False
